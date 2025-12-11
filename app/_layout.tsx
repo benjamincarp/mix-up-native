@@ -1,15 +1,18 @@
 import { Stack, useNavigation } from "expo-router";
-import { useEffect } from 'react';
+import { store } from '../store/index'
+import { Provider } from 'react-redux'
 
 export default function RootLayout() {
   return (
-    <Stack 
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#1a231a',
-        },
-        headerTintColor: '#dedcdc'
-      }}
-    />
+    <Provider store={store}>
+      <Stack 
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#1a231a',
+          },
+          headerTintColor: '#dedcdc'
+        }}
+      />
+    </Provider>
   );
 }
