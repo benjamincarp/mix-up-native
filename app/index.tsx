@@ -1,17 +1,15 @@
-import { View } from "react-native";
 import Header from "@/components/header";
+import MainContainer from "@/components/main_container";
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        backgroundColor: "#1a231a",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <MainContainer>
       <Header text="Welcome to Mix Up Native!" />
-    </View>
+      <Link href="/drinks/manhattan" style={{color: "#dedcdc", 
+              fontSize: 15 }}>Manhattan</Link>
+      <Link href="/drinks/old fashioned"  style={{color: "#dedcdc", 
+              fontSize: 15 }}>Old Fashioned</Link>
+    </MainContainer>
   );
 }

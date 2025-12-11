@@ -33,7 +33,7 @@ export default function Header ({text}: HeaderProps){
               textAlign: "center", 
             }}
           >
-            {text}
+            {text.toUpperCase()}
         </Text>
         </View>
       </View>
