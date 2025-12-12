@@ -1,6 +1,5 @@
-import { Stack, useNavigation } from "expo-router";
-import { store } from '../store/index'
-import { Provider } from 'react-redux'
+import { Stack } from "expo-router";
+import { Colors } from "../constants/theme";
 
 export default function RootLayout() {
   return (
@@ -8,9 +7,9 @@ export default function RootLayout() {
       <Stack 
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#1a231a',
+            backgroundColor: Colors.dark.background,
           },
-          headerTintColor: '#dedcdc'
+          headerTintColor: Colors.dark.text,
         }}
       />
     // </Provider>

@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react';
-import  Header from '@/components/Header';
+import  Header from './Header';
 import { View } from 'react-native';
+import { Colors } from '@/constants/theme';
 
 interface Params {
 	titleText: string 
@@ -8,14 +9,26 @@ interface Params {
 
 export default function ContentCard (props: PropsWithChildren<Params>){
     return (
-        <View className='p-5'>
+        <View style={{ padding: 5, width: '100%', marginBottom: 25}}>
             <Header text={props.titleText} />
-            {/* <View className='flex flex-row justify-center'>
-                <View className='p-6 border-2 border-double flex-grow max-w-3xl'>
+            <View 
+                style={{ 
+                    marginTop: 10,
+                    padding:1,
+                    borderColor: Colors.dark.text,
+                    borderWidth: 1,
+                    borderStyle: "solid",
+                 }}>
+                <View 
+                    style={{
+                        padding: 5,
+                        borderColor: Colors.dark.text,
+                        borderWidth: 1,
+                        borderStyle: "solid",
+                    }}>
                     {props.children}
                 </View> 
-            </View>*/}
-        </View>
-        
-    )
+            </View>
+        </View>   
+    );
 }

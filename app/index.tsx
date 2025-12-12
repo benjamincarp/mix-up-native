@@ -17,7 +17,6 @@ export default function Index() {
 
   useEffect(() => {
     fetchActiveMenu().then((menu) => {
-      console.log("Fetched menu:", menu);
       setData(()=> menu ? menu : undefined);
     });}
   ,[]);

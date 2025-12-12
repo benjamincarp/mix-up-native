@@ -1,7 +1,8 @@
 import { Recipe } from "../contentful/recipes"
 import { Link } from "expo-router";
 import ContentCard from './ContentCard';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
+import { Colors } from "@/constants/theme";
 
 interface HeaderParams {
     title: string,
@@ -11,24 +12,37 @@ interface HeaderParams {
 export default function RecipeList ({title, recipeList} :HeaderParams){
     return (
         <ContentCard titleText={title}>
-            {/* <View className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {recipeList.map((recipe, index) => {
-                const name = recipe.name.toString();
-                return (
-                    <View key={name}>
-                        {/* {(index>0)? <Separator/> : null} */}
-                        {/* <Link href={`/drinks/${name}`} >
-                        <View className='text-center'>
-                            <View className='underline'>
-                            {name.toUpperCase()}
-                            </View>
-                            {recipe.description}
+            <View> 
+                {recipeList.map((recipe, index) => {
+                    const name = recipe.name.toString();
+                    return (
+                        <View key={name} style={{ margin: 10,}}>
+                            <Link href={`/drinks/${name}`}>
+                                <View style={{alignItems: 'center', width: '100%'}}>
+                                <Text 
+                                    style={{
+                                        color: Colors.dark.text,
+                                        fontSize: 14,
+                                        textDecorationLine: 'underline',
+                                    }}
+                                >
+                                    {name.toUpperCase()}
+                                </Text>
+                                <Text
+                                    style={{
+                                        color: Colors.dark.text,
+                                        fontSize: 14,
+                                    }}
+                                >
+                                
+                                    {recipe.description}
+                                </Text>
+                                </View>
+                            </Link>
                         </View>
-                        </Link>
-                    </View>
-                )
-            })}
-            </View> */} 
+                    )
+                })}
+            </View>
         </ContentCard>
     )
 }

@@ -1,3 +1,4 @@
+import { Colors } from '@/constants/theme';
 import { View, Text } from 'react-native';
 
 export type HeaderProps = {
@@ -13,7 +14,7 @@ export default function Header ({text}: HeaderProps){
           paddingLeft: 5,
           paddingRight: 5,
           borderStyle: "solid",
-          borderColor: "#dedcdc",
+          borderColor: Colors.dark.text,
           borderWidth: 2
         }}>
         <View
@@ -22,12 +23,12 @@ export default function Header ({text}: HeaderProps){
             borderStyle: "solid",
             marginTop: -10, 
             marginBottom: -10, 
-            borderColor: "#dedcdc",
+            borderColor: Colors.dark.text,
             borderWidth: 2
           }}>
           <Text
             style={{ 
-              color: "#dedcdc", 
+              color: Colors.dark.text,
               fontSize: 30, 
               fontWeight: "bold",
               textAlign: "center", 
