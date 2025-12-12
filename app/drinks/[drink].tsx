@@ -1,7 +1,7 @@
+import Header from "@/components/Header";
+import MainContainer from "@/components/MainContainer";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import { useEffect } from 'react';
-import Header from "@/components/header";
-import MainContainer from "@/components/main_container";
 
 export default function Drink() {
   const { drink, extra } = useLocalSearchParams();

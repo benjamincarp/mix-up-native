@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 
 export default function RootLayout() {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
       <Stack 
         screenOptions={{
           headerStyle: {
@@ -13,6 +13,6 @@ export default function RootLayout() {
           headerTintColor: '#dedcdc'
         }}
       />
-    </Provider>
+    // </Provider>
   );
 }
