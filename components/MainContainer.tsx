@@ -15,7 +15,9 @@ export default function MainContainer({children}: ContainerProps){
             flex: 1,
             justifyContent: "flex-start",
             alignItems: "center",
-            padding: 30,
+            paddingLeft: 5,
+            paddingRight: 5,
+            width: '100%',
         }}>
           <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.contentContainer}>
             {children}
@@ -28,10 +30,12 @@ export default function MainContainer({children}: ContainerProps){
 const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1, // Ensures the ScrollView uses all available vertical space
+    width: '100%',
   },
   contentContainer: {
     flexGrow: 1, // Ensures content can grow and enables scrolling when needed
     padding: 10,
+    width: '100%',
   },
   innerContent: {
     // Add alignment and justification styles here if needed,

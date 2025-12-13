@@ -1,3 +1,5 @@
+import { Text, StyleSheet } from 'react-native'
+
 export const Colors = {
     dark: {
         text: '#dedcdc',
@@ -8,3 +10,26 @@ export const Colors = {
         background: '#dedcdc'
     }
 };
+
+export const Styles = StyleSheet.create({
+    textBase: {
+        color: Colors.dark.text,
+        fontSize: 14,
+    },
+    textItalic: {
+        fontStyle: 'italic',
+    },
+    textUnderline: {
+        textDecorationLine: 'underline',
+    },
+    borderThin: {
+        borderColor: Colors.dark.text,
+        borderWidth: 1,
+        borderStyle: "solid",
+    },
+    borderMed: {
+        borderColor: Colors.dark.text,
+        borderWidth: 2,
+        borderStyle: "solid",
+    },
+});
