@@ -1,5 +1,6 @@
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context'
+import { StyleSheet } from "react-native";
 
 export type ContainerProps = {
 	children?: React.ReactNode 
@@ -16,8 +17,24 @@ export default function MainContainer({children}: ContainerProps){
             alignItems: "center",
             padding: 30,
         }}>
+          <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.contentContainer}>
             {children}
+          </ScrollView>
         </SafeAreaView>
     </SafeAreaProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  scrollContainer: {
+    flex: 1, // Ensures the ScrollView uses all available vertical space
+  },
+  contentContainer: {
+    flexGrow: 1, // Ensures content can grow and enables scrolling when needed
+    padding: 10,
+  },
+  innerContent: {
+    // Add alignment and justification styles here if needed,
+    // otherwise they may interfere with the flexGrow: 1 on contentContainer
+  }
+});
